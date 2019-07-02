@@ -1,7 +1,6 @@
 terraform {
   backend "gcs" {
     bucket = "sw-tania"
-    region = "us-east1"
     prefix = "terraform/state"
   }
 }
