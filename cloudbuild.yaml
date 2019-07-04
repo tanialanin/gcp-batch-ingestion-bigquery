@@ -29,7 +29,7 @@ steps:
 # 4b. Deploy the Cloud Function that listens to the bucket
 - name: gcr.io/cloud-builders/gcloud
   id: function-deploy
-  args: ['functions', 'deploy', 'goWithTheDataFlow', '--stage-bucket=gs://tania-batch-pipeline', '--trigger-bucket=gs://tania-batch-pipeline','--runtime=nodejs8']
+  args: ['functions', 'deploy', 'goWithTheDataFlow', '--stage-bucket=gs://tania-batch-pipeline', '--trigger-bucket=gs://tania-batch-pipeline','--runtime=nodejs8','--trigger-event=google.storage.object.finalize']
   dir: 'cloud-function'
   waitFor: ['npm-install-test']
 
