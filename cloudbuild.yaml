@@ -33,12 +33,12 @@ steps:
   dir: 'cloud-function'
   waitFor: ['npm-install-test']
 
-# # 5. Trigger the pipeline for demo purposes
-# - name: gcr.io/cloud-builders/gsutil
-#   args: ['cp', 'gs://test-file-for-dataflow/*', 'gs://batch-pipeline/upload/file.csv']
+# 5. Trigger the pipeline for demo purposes
+- name: gcr.io/cloud-builders/gsutil
+  args: ['cp', 'gs://sw-tania/wiki_test.csv', 'gs://tania-batch-pipeline/upload/wiki_test.csv']
 
-# # 6. Copy tarball/archive to GCS for more shenanigans later
-# artifacts:
-#   objects:
-#     location: 'gs://batch-pipeline/artifacts'
-#     paths: ['build/distributions/*.*']
+# 6. Copy tarball/archive to GCS for more shenanigans later
+artifacts:
+  objects:
+    location: 'gs://tania-batch-pipeline/artifacts'
+    paths: ['build/distributions/*.*']
