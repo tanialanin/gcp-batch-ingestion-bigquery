@@ -26,7 +26,7 @@ steps:
   dir: 'cloud-function'
   waitFor: ['terraform-apply']
 
-4b. Deploy the Cloud Function that listens to the bucket
+# 4b. Deploy the Cloud Function that listens to the bucket
 - name: gcr.io/cloud-builders/gcloud
   id: function-deploy
   args: ['functions', 'deploy', 'goWithTheDataFlow', '--stage-bucket=gs://tania-batch-pipeline', '--trigger-bucket=gs://tania-batch-pipeline']
